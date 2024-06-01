@@ -1,0 +1,184 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-image: url('../images/fondoheader.jpg'); /* Reemplaza con la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 3em 0;
+    position: relative;
+
+    min-height: 50vh; /* Ajusta la altura mínima del header */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1, header nav {
+    position: relative; /* Asegura que el contenido esté por encima de la imagen de fondo */
+    z-index: 1;
+}
+
+/* Estilos para el main y el section */
+main {
+    margin-top: 0 !important; /* Elimina el margen superior del main */
+    padding-top: 0 !important; /* Asegúrate de que no haya padding superior */
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Añade una superposición oscura */
+    z-index: 0;
+}
+
+
+
+
+
+/* Estilos para el carrusel */
+.carousel {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    width: 300px;  /* Ajusta el ancho del carrusel */
+    height: 200px; /* Ajusta la altura del carrusel */
+    margin: 0 auto; /* Centra el carrusel horizontalmente */
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+    width: 300px;  /* Ajusta el ancho de las imágenes */
+    height: 200px; /* Ajusta la altura de las imágenes */
+    object-fit: cover; /* Asegura que las imágenes cubran el espacio sin distorsionarse */
+    flex-shrink: 0;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2em;
+    padding: 0.5em;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+
+
+
+header, footer {
+    background-color: #343a40;
+    color: white;
+    /*padding: 1rem;*/
+}
+
+
+header h1, footer p {
+    margin: 0 ;
+}
+
+nav a {
+    color: white;
+    margin: 0 1rem;
+}
+
+nav a:hover {
+    text-decoration: none;
+}
+
+
+
+
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+h2 {
+    animation: fadeIn 3s;
+}
+
+
+
+
+
+.card{
+    margin-bottom: 20px;
+}
+
+/* Ajustar tamaño de las imágenes */
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Ajustar la altura máxima del texto y el gradiente */
+.card-text {
+    max-height: 100px;
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.3s ease;
+}
+
+.card-text::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1.5em;
+    background: linear-gradient(to bottom, transparent, white);
+}
+
+/* Botón Leer más */
+.btn-toggle {
+    display: block;
+    margin-top: 10px;
+    cursor: pointer;
+    color: blue;
+    background: none;
+    border: none;
+    text-decoration: underline;
+}
+
+.card.expanded .card-text {
+    max-height: none;
+}
+
+.card.expanded .card-text::after {
+    display: none;
+}
+
+/* Estilo para el precio */
+.card-price {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
